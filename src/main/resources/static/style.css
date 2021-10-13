@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	background-color: #c0c0c0;
+	
+}
+
+.menu{
+	background-color: black;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu ul{
+	display: flex;
+	
+}
+
+.menu ul li{
+	
+	list-style-type: none;
+}
+
+.menu ul li a{
+	display: flex;
+	text-decoration: none;
+	padding: 20px;
+	color: white;
+	opacity: 0.5;
+	text-transform: uppercase;
+}
+
+.menu ul li a:hover{
+	background-color: blue;
+	color:white;
+	transition: 0.5s;
+	opacity: 1;
+}
+
+.titleContainer{
+	
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 30px;
+	padding: 0; 
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	background-color: #fff;
+	border-style: groove;
+	border-radius: 30px;
+}
+
+.titleContainer h1{
+	
+	color: #004080;
+	font-family: Algerian;
+	font-size: 35px;
+	
+}
+
+.title_h2{
+	
+	margin-top: 30px;
+	margin-left: 200px;
+	margin-right: 200px;
+	padding: 0; 
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	text-transform: uppercase;
+/*  	background-color: #000;  */
+/* 	height: 8vh; */
+/* 	border-radius: 10px; */
+}
+
+.title_h2 h2{
+	color:  #c0c0c0;
+	position: relative;
+	letter-spacing: 2px;
+	background:  linear-gradient(90deg,green,red,blue);
+	background-size: 80%;
+	background-repeat:no-repeat;
+	animation: animate 20s infinite;
+	background-clip: text;
+}
+
+@keyframes animate{
+	
+	0%{
+		background-position: -500%;
+	}
+	
+	100%{
+		background-position: 500%;
+	}
+}
+
+.ed_title_h3{
+	
+	text-align: center;
+/* 	margin-left: 150px; */
+	margin-top: 50px;
+}
+
+.ce_title_h2{
+	
+	text-align: center;
+	margin-top: 50px;
+}
+
+.list_h1{
+	margin: 30px 0 20px 0;
+	text-align: center;
+	color: #0000a0;
+	text-transform: uppercase;
+}
+
+table{
+	
+	margin: 0 auto; /*Pour centrer le tableau*/
+	table-layout: auto;
+	border-spacing: inherit;
+
+	
+}
+
+.entete{
+	
+	color: blue;
+}
+
+.enteteS{
+	
+	color: red;
+}
+
+table th, table td{
+	padding: 5px;
+}
+
+.neant{
+	color: red;
+}
+
+table tr td{
+	text-align: left
+}
+
+.labels{
+	
+	margin-left: 650px;
+}
+
+.form-control{
+	
+	margin-left: 550px;
+	width: 250px;
+	height:20px;
+	text-align: center;
+}
+
+.btnCreer{
+	
+	margin-left: 630px;
+	width: 100px;
+	height: 30px;
+	color: white;
+	background-color: #0080ff;
+	border-radius: 10px;	
+}
+
+.btnModif{
+	
+	width: 100px;
+	height: 30px;
+	color: white;
+	background-color: #0080ff;
+	margin-left: 20px;
+	
+	border-radius: 10px;
+}
+
+.btnSup{
+	
+	width: 100px;
+	height: 30px;
+	color: white;
+	background-color: #ff0000;
+	margin-left: 30px;
+	margin-right: 20px;
+	
+	border-radius: 10px;
+}
+
+.btnCreer:hover{
+	
+	color: #0080ff;
+	background-color: white;
+}
+
+.btnModif:hover{
+	
+	color: #0080ff;
+	background-color: white;
+}
+
+.btnSup:hover{
+	
+	color: #ff0000;
+	background-color: white;
+}
+.lienCreer{
+	margin-left: 575px;
+	margin-right: 400px;
+}
+
+.lienCreer:hover {
+	
+	font-style: italic;
+	color: blue;
+	
+} 
+
+
+
+
+

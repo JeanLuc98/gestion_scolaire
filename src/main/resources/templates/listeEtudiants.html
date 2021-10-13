@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Liste des étudiants de l'établissement</title>
+</head>
+<body class="container"> 
+
+<!-- 	<div class="titleContainer"> -->
+<!-- 		<h1>Gestion Etablissement Scolaire</h1> -->
+<!-- 	</div> -->
+	
+	<nav class="menu">
+		<ul>
+			<li><a th:href="@{/espaceDirecteur}">Acceuil</a></li>
+			<li><a th:href="@{/creerEtudiant}">Créer un étudiant</a></li>
+			<li><a th:href="@{/update}">Modifier un étudiant</a></li>
+			<li><a th:href="@{/delete}">Supprimer un étudiant</a></li>
+			<li><a th:href="@{/listeEtudiants}">Lister tous les étudiants</a></li>
+		</ul>
+	</nav>
+
+	
+	<h1 class="list_h1">LISTE DES ETUDIANTS DE L'ETABLISSEMENT</h1>
+	
+	<table border="1">
+		<tr>
+			<th class="entete">Id</th>
+			<th class="entete">Nom</th>
+			<th class="entete">Prénom</th>
+			<th class="entete">Date de Naissance</th>
+			<th class="entete">E-mail</th>
+			<th class="entete">Téléphone</th>
+			<th class="entete">Adresse</th>
+		</tr>
+		
+		<tr th:if="${etudiants.empty}">
+			<td colspan="7" class="neant">Aucun employé en base de données</td>
+		</tr>
+		
+		<tr th:each="etudiant:${etudiants}"> 
+		
+			<td th:text="${etudiant.id}">Id</td>
+			<td th:text="${etudiant.nom}">Nom</td>
+			<td th:text="${etudiant.prenom}">Prénom</td>
+			<td th:text="${etudiant.dateNaissance}" style="text-align: center;">Date de Naissance</td>
+			<td th:text="${etudiant.email}">E-mail</td>
+			<td th:text="${etudiant.telephone}">Téléphone</td>
+			<td th:text="${etudiant.adresse}">Adresse</td>
+			
+		</tr>
+		
+	</table>
+	
+</body>
+</html>

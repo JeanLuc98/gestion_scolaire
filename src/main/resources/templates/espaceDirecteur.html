@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Espace directeur</title>
+</head>
+<body class="container"> 
+
+<!-- 	<div class="titleContainer"> -->
+<!-- 		<h1>Gestion Etablissement Scolaire</h1> -->
+<!-- 	</div> -->
+	
+	<nav class="menu">
+		<ul>
+			<li><a th:href="@{/espaceDirecteur}">Acceuil</a></li>
+			<li><a th:href="@{/creerEtudiant}">Créer un étudiant</a></li>
+			<li><a th:href="@{/update}">Modifier un étudiant</a></li>
+			<li><a th:href="@{/delete}">Supprimer un étudiant</a></li>
+			<li><a th:href="@{/listeEtudiants}">Lister tous les étudiants</a></li>
+		</ul>
+	</nav>
+
+	<div class="titleContainer">
+		<h1>Gestion Etablissement Scolaire</h1>
+	</div>
+	
+	<div class="title_h2">
+		<h2>Cet espace est uniquement réservé au directeur des études</h2>
+	</div>
+	
+	<h3 class="ed_title_h3">Liste de tous les étudiants de l'établissement</h3>
+	
+	<table border="1">
+		<tr>
+			<th class="entete">Nom</th>
+			<th class="entete">Prénom</th>
+			<th class="entete">Date de Naissance</th>
+			<th class="entete">E-mail</th>
+			<th class="entete">Téléphone</th>
+			<th class="entete">Adresse</th>
+			<th class="entete">Action</th>
+		</tr>
+		
+		<tr th:if="${etudiants.empty}">
+			<td colspan="7" class="neant">Aucun employé en base de données</td>
+		</tr>
+		
+		<tr th:each="etudiant:${etudiants}"> 
+		
+			<td th:text="${etudiant.nom}">Nom</td>
+			<td th:text="${etudiant.prenom}">Prénom</td>
+			<td th:text="${etudiant.dateNaissance}" style="text-align: center;">Date de Naissance</td>
+			<td th:text="${etudiant.email}">E-mail</td>
+			<td th:text="${etudiant.telephone}">Téléphone</td>
+			<td th:text="${etudiant.adresse}">Adresse</td>
+			
+			<td>
+				<a th:href="@{/updateEtudiant/{id}(id=${etudiant.id})}"><button class="btnModif">Modifier</button></a>
+				<a th:href="@{/delete/{id}(id=${etudiant.id})}"><button class="btnSup">Supprimer</button></a>
+			</td>
+		</tr>
+		
+	</table>
+	
+	<h3><a th:href="@{/creerEtudiant}" class="lienCreer">Créer un nouvel étudiant</a></h3> 
+	
+</body>
+</html>

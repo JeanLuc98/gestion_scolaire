@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Créer étudiant</title>
+</head>
+<body class="container">
+
+	<nav class="menu">
+		<ul>
+			<li><a th:href="@{/espaceDirecteur}">Acceuil</a></li>
+			<li><a th:href="@{/creerEtudiant}">Créer un étudiant</a></li>
+			<li><a th:href="@{/update}">Modifier un étudiant</a></li>
+			<li><a th:href="@{/delete}">Supprimer un étudiant</a></li>
+			<li><a th:href="@{/listeEtudiants}">Lister tous les étudiants</a></li>
+		</ul>
+	</nav>
+	
+	<h2 class="ce_title_h2">Création d'un nouvel  étudiant</h2>
+	
+	<form method="post" th:action="@{/saveEtudiant}" th:object="${etudiant}">
+		
+		
+	 		<label for="prenom" class="labels">Prénom</label> <br>
+			<input type="text" th:field="*{prenom}" class="form-control" id="prenom"
+						 placeholder="Saisir le prénom" required="required"> <br> <br>
+						 
+			<label for="nom" class="labels">Nom</label> <br>
+			<input type="text" th:field="*{nom}" class="form-control" id="prenom"
+						 placeholder="Saisir le nom" required="required"> <br> <br>
+						 
+			<label for="naissance" class="labels">Date de naissance</label> <br>
+			<input type="date" th:field="*{dateNaissance}" class="form-control" id="naissance"
+						 placeholder="Date de naissance" required="required"> <br> <br>
+						 
+			<label for="email" class="labels">E-mail</label> <br>
+			<input type="email" th:field="*{email}" class="form-control" id="email"
+						 placeholder="Saisir l'e-mail" required="required"> <br> <br>
+						 
+			<label for="adresse" class="labels">Adresse</label> <br>
+			<input type="text" th:field="*{adresse}" class="form-control" id="adresse"
+						 placeholder="Saisir l'adresse" required="required"> <br> <br>
+						 
+			<label for="tel" class="labels">Téléphone</label> <br>
+			<input type="tel" th:field="*{telephone}" class="form-control" id="tel"
+						 placeholder="Saisir téléphone" required="required"> <br> <br>
+						 
+						 
+		<button type="submit" class="btnCreer">Créer</button>
+	</form>
+</body>
+</html>
